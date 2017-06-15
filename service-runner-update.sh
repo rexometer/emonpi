@@ -50,6 +50,24 @@ git branch
 git status
 git pull
 
+echo "git pull /home/pi/Modules/home"
+cd /home/pi/Modules/home/
+git branch
+git status
+git pull
+
+echo "git pull /home/pi/Modules/settings"
+cd /home/pi/Modules/settings/
+git branch
+git status
+git pull
+
+echo "git pull /home/pi/Modules/rexometer"
+cd /home/pi/Modules/rexometer/
+git branch
+git status
+git pull
+
 if [ -d /home/pi/oem_openHab ]; then
     echo "git pull /home/pi/oem_openHab"
     cd /home/pi/oem_openHab
