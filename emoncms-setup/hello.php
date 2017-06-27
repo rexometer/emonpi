@@ -91,27 +91,27 @@ p {
 <br><br>
 
 <div id="page1">
-  <div class="welcome">Welcome to your</div>
-  <div class="welcome2"><span style="color:#c8e9f6">emon</span><span>Pi</span></div>
-  <p>This is a quick setup wizard to get you started.</p>
+  <div class="welcome">Willkommen zu deinem</div>
+  <div class="welcome2"><span style="color:#c8e9f6">rexometer</span><span></span></div>
+  <p>Dies ist ein Setup-Assistent, um Ihnen den Start zu erleichtern.</p>
   <div style="clear:both; height:20px"></div>
 
   <div id="setup-step1">
-    <p><b>WIFI Configuration:</b> Would you like to:</p>
-    <div id="setup-ethernet" class="setupbox hide">Continue on Ethernet</div>
-    <div id="setup-standalone" class="setupbox hide">Continue in stand-alone WIFI Access Point mode</div>
-    <div id="setup-wificlient" class="setupbox">Connect to WIFI network</div>
+    <p><b>WIFI Konfiguration:</b> Wie soll die Verbindung hergestellt werden:</p>
+    <div id="setup-ethernet" class="setupbox hide">Weiter über Ethernet</div>
+    <div id="setup-standalone" class="setupbox hide">Weiter mit dem stand-alone WIFI Access Point mode</div>
+    <div id="setup-wificlient" class="setupbox">Mit WIFI-Netzwerk verbinden</div>
   </div>
 
   <div id="setup-step2" style="display:none">
-    <p><b>WIFI Configuration</b></p> 
-    <p>Select WIFI network to connect to:</p>
+    <p><b>WIFI Konfiguration</b></p> 
+    <p>Wählen Sie das WIFI-Netzwerk mit dem sie sich verbinden möchten:</p>
     <div class="wifinetworks-bound">
-      <div id="networks-scanning">Scanning for networks<br><br><img src="<?php echo $path; ?>Modules/wifi/icons/ajax-loader.gif" loop=infinite></div>
+      <div id="networks-scanning">Suche Netzwerke<br><br><img src="<?php echo $path; ?>Modules/wifi/icons/ajax-loader.gif" loop=infinite></div>
       <div id="networks"></div>
       <div id="network-authentication" style="display:none">
-        <div class="auth-heading">Authentication required</div>
-        <div class="auth-message">Passwords or encryption keys are required to access Wi-Fi network:<br><b><span id="WIFI_SSID"></span></b></div>
+        <div class="auth-heading">Authentifikation erforderlich</div>
+        <div class="auth-message">Ein Passworts wird für dieses Wi-Fi Netzwerk benötigt:<br><b><span id="WIFI_SSID"></span></b></div>
         Password:<br>
         <input id="wifi-password" type="password" style="height:auto">
         <div class="auth-showpass"><input id="showpass" type="checkbox" style="margin-top:-3px"> Show password</div>
@@ -122,11 +122,11 @@ p {
 </div>
 
 <div id="page2" style="display:none; text-align:center">
-  <div class="welcome">WiFi network setting saved. Rebooting system... please wait a couple of minutes before navigating to your emonpi's hostname:</div>
-  <div class="welcome2"><a href="http://emonpi.local">http://emonpi.local</a> <span style="color:#c8e9f6">or</span> <a href="http://emonpi">http://emonpi</a></div>
+  <div class="welcome">WiFi Einstellungen gespeichert. Starte das System neu... bitte warte ein paar Minuten bevor Sie die Seite erneut aufrufen:</div>
+  <div class="welcome2"><a href="http://rexometer.local">http://rexometer.local</a> <span style="color:#c8e9f6">or</span> <a href="http://rexometer">http://rexometer</a></div>
   <br>
-  <p>If the hostname does not work on your network, navigate to the IP address shown on the emonPi LCD.</p>
-  <p><b>Note:</b> If incorrect password is entered and wifi connection fails, connect emonpi via Ethernet to complete setup</p></p>
+  <p>Falls die Adressen nicht funktionieren, nutzen Sie bitte die IP-Adresse.</p>
+  <p><b>Note:</b> Falls ein falsches Passwort eingegeben wurde und die WLAN-Verbindung fehlschlägt, verbinden Sie bitte das rexometer via Ethernet um dieses Setup abzuschließen</p></p>
 
 </div>
 
@@ -139,7 +139,7 @@ var networks = [];
 var ethernet = false;
 var wlan0 = false;
 
-$("body").css("background-color","#1d8dbc");
+$("body").css("background-color","#bcbcbc");
 $(".setupbox").last().css("border-bottom","1px solid #fff");
 
 $.ajax({type: 'GET', url: path+"setup/ethernet-status", dataType: 'text', async: true, success: function(result) {
