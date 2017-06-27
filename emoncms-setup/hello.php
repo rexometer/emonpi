@@ -91,8 +91,8 @@ p {
 <br><br>
 
 <div id="page1">
-  <div class="welcome">Willkommen zu deinem</div>
-  <div class="welcome2"><span style="color:#c8e9f6">rexometer</span><span></span></div>
+  <div class="welcome">Willkommen zu Ihrem</div>
+  <div class="welcome2"><span style="color:#05ab02">rexometer</span><span></span></div>
   <p>Dies ist ein Setup-Assistent, um Ihnen den Start zu erleichtern.</p>
   <div style="clear:both; height:20px"></div>
 
