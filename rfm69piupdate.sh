@@ -2,8 +2,8 @@
 echo "RFM69Pi Update Started"
 echo  date
 echo "Getting latest RFM69Pi release info from github"
-download_url="$(curl -s https://api.github.com/repos/openenergymonitor/RFM2Pi/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)"
-version="$(curl -s https://api.github.com/repos/openenergymonitor/RFM2Pi/releases | grep tag_name | head -n 1 |  cut -d '"' -f 4)"
+download_url="$(curl -s https://api.github.com/repos/rexometer/receiver_LPL/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)"
+version="$(curl -s https://api.github.com/repos/rexometer/receiver_LPL/releases | grep tag_name | head -n 1 |  cut -d '"' -f 4)"
 echo "Latest RFM69Pi firmware: V"$version
 
 echo "downloading latest RFM69Pi firmware from github releases:"
