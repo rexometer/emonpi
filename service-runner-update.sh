@@ -6,8 +6,13 @@
 
 echo "#############################################################"
 
+
 # Clear log update file
 cat /dev/null >  /home/pi/data/emonpiupdate.log
+
+# Make FS RW
+rpi-rw
+
 
 # Stop emonPi LCD servcice
 sudo service emonPiLCD stop
@@ -18,6 +23,7 @@ sudo /home/pi/emonpi/lcd/./emonPiLCD_update.py
 
 echo "Starting emonPi Update >"
 echo "via service-runner-update.sh"
+echo "Service Runner update script V1.0.0"
 echo "EUID: $EUID"
 argument=$1
 echo "Argument: "$argument
@@ -30,7 +36,7 @@ image_version=$(ls /boot | grep emonSD)
 echo "emonSD version: $image_version"
 echo
 
-if [ "$image_version" == "emonSD-07Nov16" ] || [ $image_version == "emonSD-03May16" ]; then
+if [ "$image_version" == "emonSD-07Nov16" ] || [ $image_version == "emonSD-03May16" ] || [ $image_version == "emonSD-26Oct17" ]; then
   echo "emonSD base image check passed...continue update"
 else
   echo "ERROR: emonSD base image old or undefined...update will not continue"
@@ -94,6 +100,7 @@ fi
 if [ -d /home/pi/usefulscripts ]; then
     echo "git pull /home/pi/usefulscripts"
     cd /home/pi/usefulscripts
+    sudo chown -R pi:pi .git
     git branch
     git status
     git pull
@@ -110,7 +117,7 @@ fi
 echo
 
 # if passed argument from Emoncms admin is rfm69pi then run rfm69pi update instead of emonPi
-if [ $argument == "rfm69pi" ]; then
+if [ "$argument" == "rfm69pi" ]; then
   echo "Running RFM69Pi firmware update:"
   /home/pi/emonpi/rfm69piupdate.sh
   echo
